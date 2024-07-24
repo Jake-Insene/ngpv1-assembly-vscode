@@ -1,0 +1,41 @@
+{
+    "name": "ngpv1-vscode",
+    "displayName": "Assembly for NGPv1",
+    "description": "Supporting NGPv1 assembly in vscode",
+    "version": "0.0.1",
+    "author": {
+        "name": "Jake-Insene"
+    },
+    "publisher": "MKornelsen",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "ngpv1",
+                "aliases": [
+                    "NGPv1",
+                    "ngpv1"
+                ],
+                "extensions": [
+                    ".inc",
+                    ".s",
+                    ".S",
+                    ".asm"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ngpv1",
+                "scopeName": "source.ngpv1",
+                "path": "./syntaxes/ngpv1.tmLanguage.json"
+            }
+        ]
+    }
+}

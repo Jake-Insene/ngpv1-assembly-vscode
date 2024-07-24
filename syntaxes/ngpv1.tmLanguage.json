@@ -1,0 +1,102 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.ngpv1",
+	"name": "NGPv1",
+	"patterns": [
+		{
+			"name": "comment.ngpv1",
+			"match": ";.*$"
+		},
+		{
+			"name": "keyword.control.directive.ngpv1",
+			"match": "(?i)\\b(include|org|format|as|raw|rom)\\b"
+		},
+		{
+			"name": "keyword.control.directive.ngpv1",
+			"match": "(?i)\\.\\b(string|byte|half|word|dword|zero)\\b"
+		},
+		{
+			"name": "storage.register.ngpv1",
+			"match": "(?i)\\b(r([0-9]|[12][0-9]|3[0-1])|zr|sp|lr)\\b"
+		},
+		{
+			"name": "storage.floatregister.ngpv1",
+			"match": "(?i)\\b[sd]([0-9]|[12][0-9]|3[0-1])\\b"
+		},
+		{
+			"name": "storage.vectorregister.ngpv1",
+			"match": "(?i)\\b(q([0-9]|[12][0-9]|3[0-1])|v([0-9]|[12][0-9]|3[0-1])\\.(4s|2d))\\b"
+		},
+		{
+			"name": "variable.name.labels.ngpv1",
+			"match": "^\\s*\\S+\\s*:"
+		},
+		{
+			"name": "support.function.bl.ngpv1",
+			"match": "\\s*(b(?:l|eq|ne|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al|nv)?)\\s+(\\S+)\\b",
+			"captures": {
+				"1": {
+					"name": "support.function.branch.ngpv1"
+				},
+				"2": {
+					"name": "variable.parameter.branchtarget.ngpv1"
+				}
+			}
+		},
+		{
+			"name": "constant.other.equalsignliteral.ngpv1",
+			"match": "=.*"
+		},
+		{
+			"name": "variable.parameter.conditioncode.ngpv1",
+			"match": "\\b(eq|ne|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al|nv)\\b"
+		},
+		{
+			"include": "#numerics"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"name": "support.function.instruction.ngpv1",
+			"match": "\\b[a-zA-Z0-9]+\\b"
+		}
+	],
+	"repository": {
+		"numerics": {
+			"patterns": [
+				{
+					"name": "constant.numeric.dec.ngpv1",
+					"match": "#?-?[0-9\\.]+\\b"
+				},
+				{
+					"name": "constant.numeric.hex.ngpv1",
+					"match": "#?-?0x[0-9a-fA-F]+\\b"
+				},
+				{
+					"name": "constant.numeric.binary.ngpv1",
+					"match": "#?-?0b[01]+\\b"
+				},
+				{
+					"name": "constant.character.ngpv1",
+					"match": "#?\\'\\\\?.\\'"
+				},
+				{
+					"name": "constant.other.ngpv1",
+					"match": "#\\(.*\\)"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.ngpv1",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ngpv1",
+					"match": "\\\\."
+				}
+			]
+		}
+	}
+}
