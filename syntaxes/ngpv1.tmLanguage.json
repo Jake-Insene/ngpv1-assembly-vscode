@@ -25,11 +25,15 @@
 		},
 		{
 			"name": "storage.vectorregister.ngpv1",
-			"match": "(?i)\\b(q([0-9]|[12][0-9]|3[0-1])|v([0-9]|[12][0-9]|3[0-1])\\.(4s|2d))\\b"
+			"match": "(?i)\\b(q([0-9]|[12][0-9]|3[0-1])|v([0-9]|[12][0-9]|3[0-1]))\\b"
 		},
 		{
 			"name": "variable.name.labels.ngpv1",
 			"match": "^\\s*\\S+\\s*:"
+		},
+		{
+			"name": "variable.name.symbolic.constant.ngpv1",
+			"match": "^\\s*\\S+\\s*="
 		},
 		{
 			"name": "support.function.bl.ngpv1",
