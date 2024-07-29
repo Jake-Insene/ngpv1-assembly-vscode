@@ -32,10 +32,6 @@
 			"match": "^\\s*\\S+\\s*:"
 		},
 		{
-			"name": "variable.name.symbolic.constant.ngpv1",
-			"match": "^\\s*\\S+\\s*="
-		},
-		{
 			"name": "support.function.bl.ngpv1",
 			"match": "\\s*(b(?:l|eq|ne|cs|hs|cc|lo|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al|nv)?)\\s+(\\S+)\\b",
 			"captures": {
